@@ -1,5 +1,0 @@
-1) db.linkedon.find({salary:{$gt: 25000}})
-
-2) db.getCollection('linkedon').find({},{_id:0, firstName:1, salary:1}).sort({ salary: -1 }).limit(3)
-
-3) db.linkedon.count({"currentCompany.name": "Walmart", salary:{$gte:7000}})
