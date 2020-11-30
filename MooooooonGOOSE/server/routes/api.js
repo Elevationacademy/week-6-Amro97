@@ -11,12 +11,27 @@ router.get('/people', function (req, res) {
 
 router.post('/person', function (req, res) {
     const info = req.body
+    console.log(info)
     let person = new Person({
         firstName: info.firstName,
         lastName: info.lastName,
         age: info.age
     })
     person.save()
+    res.end()
+})
+
+router.put('/person/:id', function (req, res) {
+    const id = req.params.id
+    Person.findByIdAndUpdate(id, {age:80}, function (err, person) {
+    })
+    res.end()
+})
+
+router.delete('/apocalypse', function (req, res) {
+    Person.find({}, function (err, people) {
+        people.forEach(p => p.remove())
+    })
     res.end()
 })
 
