@@ -11,7 +11,6 @@ router.get('/people', function (req, res) {
 
 router.post('/person', function (req, res) {
     const info = req.body
-    console.log(info)
     let person = new Person({
         firstName: info.firstName,
         lastName: info.lastName,
